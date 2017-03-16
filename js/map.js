@@ -1,12 +1,14 @@
-// function Test() {
-//
-// }
-//
-// Test.prototype.initMap() {
-//   var map = new google.maps.Map(docuement.getElementById('map'), {
-//     center: {lat: 45.523, lng: 122.676},
-//     zoom: 4
-//   });
-// }
-//
-// exports.mapModule = Test;
+var apiKey = require('./../.env').apiKey;
+
+function Map() {
+
+}
+
+Map.prototype.initMap = function(print){
+	$.getScript("https://maps.googleapis.com/maps/api/js?key="+apiKey)
+  .then(function(response) {
+		print(response)
+  });
+};
+
+exports.mapModule = Map;
